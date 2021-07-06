@@ -8,7 +8,7 @@ This repository includes sample cloudformation templates to deploy the necessary
 
 ## Architecture Overview
 
-![diagram](../master/architecture_overview.png)
+![diagram](../main/architecture_overview.png)
 
 ## Security
 
