@@ -1,0 +1,20 @@
+ticket_no,problem_issue,created_by,created_by_email_id,created_date,resolved_date,status,assigned_user,assigned_user_email_id 
+TIC00020,No internet connectivity,Adam C,adam_c@example.com,09-15-2019,,In Progress,Rich D,rich_d@example.com
+TIC00021,Laptop Screen is broken,Chris S,chris_b@example.com,09-01-2019,09-02-2019,Closed,Todd V,todd_example.com
+TIC00022,User can not print from his laptop,Jason D,jason_P@example.com,09-14-2019,,New,RIch D,rich_example.com
+TIC00023,Outlook setup,Rebecca M,rebecca_s@example.com,09-05-2019,09-09-2019,Closed,Jerome B,jerome_example.com
+TIC00024,Raid setup required for server,Megan M,megan_s@example.com,09-19-2019,,New,Michael R,michael_r@example.com
+TIC00025,Password reset,Patel M,patel_r@example.com,09-11-2019,09-15-2019,Closed,Param S,param_s@example.com
+TIC00026,Dual monitor setup is required,Peter B,peter_r@example.com,09-04-2019,09-04-2019,Closed,Alexa T,alexa_t@example.com
+TIC00027,Laptop speakers are not working,Phil S,phil_w@example.com,09-01-2019,09-01-2019,Closed,Jerome B,jerome_b@example.com
+TIC00028,New desktop setup required,Tom B,tom_r@example.com,09-11-2019,,New,Kevin L,kevin_l@example.com
+TIC00029,Admin access need to install software,Sam A,sam_s@example.com,09-13-2019,,In Progress,Lindsy L,lindsy_l@example.com
+TIC00030,Virus alerts are showing up while browsing,Peter B,peter_b@example.com,09-22-2019,,New,Lindsy L,lindsy_l@example.com
+TIC00031,Computer is running very slow,Rick E,rick_s@example.com,09-07-2019,09-09-2019,Closed,Alexa T,alexa_t@example.com
+TIC00032,Install new printer,John C,john_p@example.com,09-06-2019,09-09-2019,Closed,Kevin L,kevin_l@example.com
+TIC00033,VPN Setup is required,David C,david_r@example.com,09-16-2019,09-16-2019,Closed,Rich D,rich_example.com
+TIC00034,Install MySql on the laptop,Steve B,steve_l@example.com,09-02-2019,09-08-2019,Closed,Kevin L,kevin_l@example.com
+TIC00035,Computer beeps and shuts down,Megan M,megan_s@example.com,09-01-2019,09-04-2019,Closed,Jerome B,jerome_b@example.com
+TIC00036,Need to increase RAM of my laptop,Danial L,danial_l@example.com,09-07-2019,09-11-2019,Closed,Kevin L,kevin_example.com
+TIC00037,BSOD,Jason D,jason_B@example.com,09-08-2019,09-11-2019,Closed,Alexa T,alexa_t@example.com
+TIC00038,Transfer data from one laptop to another,Chuck S,chuck_a@example.com,09-09-2019,,In Progress,Jerome B,jerome_b@example.com

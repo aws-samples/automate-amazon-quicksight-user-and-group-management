@@ -1,0 +1,86 @@
+
+----------- Table Definition ticket_data -----------
+
+create table ticket_data
+( ticket_no varchar(100) not null,
+problem_issue varchar(1000),
+created_by varchar(500),
+created_by_email_id varchar(1000),
+created_date date NULL,
+resolved_date date NULL,
+status varchar(100),
+assigned_user varchar(500),
+assigned_user_email_id varchar(1000),
+primary key(ticket_no) 
+)
+distkey(ticket_no)
+;
+
+------ Table Definition LDAP_flattened_data ------------
+
+Create table LDAP_flattened_data (
+USER_EMAIL_ID varchar(1000),
+NAME varchar(500),
+DESIGNATION varchar(200),
+REPORTS_TO varchar(1000),
+VP_ROLL_UP varchar(1000),
+primary key (USER_EMAIL_ID))
+distkey (USER_EMAIL_ID);
+
+-------- Table Definition assignment_group_manager_mapping  ----
+
+CREATE table assignment_group_manager_mapping (
+ assignment_group varchar(500),
+ assignment_group_manager varchar(1000),
+ assignment_group_manager_email varchar(1000),
+ primary key (assignment_group_manager_email))
+ distkey (assignment_group_manager_email);
+ 
+ ----- Table Definition row_level_security--
+              
+ CREATE TABLE row_level_security (
+ groupname varchar(500),
+ username varchar(500),
+ assignment_group varchar(500),
+ assigned_user varchar(500));
+                       
+----------------Load tables----- 
+
+copy ticket_data(ticket_no,problem_issue,created_by,created_by_email_id,created_date,resolved_date,status,assigned_user,assigned_user_email_id)
+from 's3://bucket-name/ticketing-data/ticket_data.csv'
+iam_role 'arn:aws:iam::111122223333:role/quicksight-row-level-demo-redshift-role'
+delimiter ','
+DATEFORMAT 'MM-DD-YYYY'
+emptyasnull
+IGNOREHEADER 1
+region 'us-east-1'
+;
+
+--------------------------------------------------------------
+copy LDAP_flattened_data(USER_EMAIL_ID,NAME,DESIGNATION,REPORTS_TO,VP_ROLL_UP)
+from 's3://bucket-name/ldap-data/ldap_flattened_data.csv'
+iam_role 'arn:aws:iam::111122223333:role/quicksight-row-level-demo-redshift-role'
+delimiter ','
+emptyasnull
+IGNOREHEADER 1
+region 'us-east-1'
+;    
+----------------------------------------------------------------
+copy assignment_group_manager_mapping(assignment_group,assignment_group_manager,assignment_group_manager_email)
+from 's3://bucket-name/group-manager-mapping/group_manager_mapping.csv'
+iam_role 'arn:aws:iam::111122223333:role/quicksight-row-level-demo-redshift-role'
+delimiter ','
+emptyasnull
+IGNOREHEADER 1
+region 'us-east-1'
+;             
+                       
+-------------------------------------------------------------------
+copy row_level_security (groupname,username,assignment_group,assigned_user)
+from 's3://bucket-name/permissions/row_level_security.csv'
+iam_role 'arn:aws:iam::111122223333:role/quicksight-row-level-demo-redshift-role'
+delimiter ','
+emptyasnull
+IGNOREHEADER 1
+region 'us-east-1'
+;
